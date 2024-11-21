@@ -19,8 +19,14 @@
  *   getStringLength(null) => 0
  *   getStringLength(undefined) => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  let result;
+  if (value === null || value === undefined) {
+    result = 0;
+  } else {
+    result = value.length;
+  }
+  return result;
 }
 
 /**
@@ -53,7 +59,8 @@ function isString(/* value */) {
  *   concatenateStrings('aa', '') => 'aa'.
  *   concatenateStrings('', 'bb') => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
+function concatenateStrings(/* value1, value2 */
+) {
   throw new Error('Not implemented');
 }
 
