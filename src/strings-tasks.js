@@ -43,8 +43,16 @@ function getStringLength(value) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  let result;
+  if (value === undefined || value === null) {
+    result = false;
+  } else if (typeof value.valueOf() === 'string') {
+    result = true;
+  } else if (typeof value.valueOf() !== 'string') {
+    result = false;
+  }
+  return result;
 }
 
 /**
@@ -299,8 +307,8 @@ function orderAlphabetically(/* str */) {
  *   containsSubstring('JavaScript is Fun', 'Python') => false
  *   containsSubstring('12345', '34') => true
  */
-function containsSubstring(/* str, substring */) {
-  throw new Error('Not implemented');
+function containsSubstring(str, substring) {
+  return str.includes(substring);
 }
 
 /**
