@@ -272,8 +272,13 @@ function endsWith(str, substr) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+  const date = new Date(0, 0, 0, 0, minutes, seconds);
+  let mm = date.getMinutes().toString();
+  if (mm <= 10) mm = mm.padStart(2, '0');
+  let ss = date.getSeconds().toString();
+  if (ss <= 10) ss = ss.padStart(2, '0');
+  return `${mm}:${ss}`;
 }
 
 /**
@@ -341,8 +346,19 @@ function containsSubstring(str, substring) {
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {
-  throw new Error('Not implemented');
+function countVowels(str) {
+  let result = 0;
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'];
+  for (let s = 0; s < vowels.length; s += 1) {
+    for (let i = 0; i < str.length; i += 1) {
+      if (str[i] === vowels[s]) {
+        result += 1;
+      } else if (str[i] !== vowels[s]) {
+        result += 0;
+      }
+    }
+  }
+  return result;
 }
 
 /**
@@ -485,8 +501,8 @@ function unbracketTag(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str.split(';');
 }
 
 /**
