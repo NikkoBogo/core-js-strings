@@ -312,8 +312,8 @@ function reverseString(str) {
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  return str.split('').sort().join('');
 }
 
 /**
@@ -398,6 +398,16 @@ function isPalindrome(str) {
  *   findLongestWord('No words here') => 'words'
  */
 function findLongestWord(/* sentence */) {
+  /* const massive = sentence.split(' ');
+  let result = massive[0];
+  for (let i = 1; i < massive.length; i += 1) {
+    if (result.length >= massive[i].length) {
+      result = result;
+    } else {
+      result = massive[i];
+    }
+  }
+  return result; */
   throw new Error('Not implemented');
 }
 
